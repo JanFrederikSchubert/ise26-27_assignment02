@@ -11,6 +11,10 @@ class DoublyLinkedList {
     var length: Int = 0
         private set
 
+    companion object {
+        const val MAX_GET_INDEX: Int = 1000
+    }
+
     /**
      * Appends the value of [e] to the end of this list.
      * [e] itself is not linked into this list, so it may belong to another list.
@@ -95,9 +99,9 @@ class DoublyLinkedList {
      * Returns the value at position [index].
      */
     fun get(index: Int): Double {
-        if(index > 1000) println("Index exceeds the limit")
+        if (index > MAX_GET_INDEX) println("Index exceeds the limit")
         if (index < 0 || index >= length) {
-            throw IndexOutOfBoundsException()
+            throw IndexOutOfBoundsException("DoublyLinkedList.get(index): index < 0 or index > length")
         }
         var element = begin
         repeat(index) { element = element!!.next }
