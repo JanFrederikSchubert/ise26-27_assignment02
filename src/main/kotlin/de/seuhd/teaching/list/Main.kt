@@ -11,4 +11,6 @@ fun main() {
 
     println("The list contains the following elements:")
     list.print()
+
+    println("First element: ${list.get(0)}")
 }
